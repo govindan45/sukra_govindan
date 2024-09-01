@@ -29,36 +29,30 @@ The Book API allows users to manage a collection of books by providing functiona
     ```
     python -c "from app.database import create_db; create_db()"
     ```
-
-
-
-2. **Access the API documentation:**
-
-    Open your browser and go to `http://127.0.0.1:8000/docs` to view the automatically generated API documentation using Swagger UI.
-
+    
 ## API Endpoints
 
-1. **Create a Book**: `POST /books/`
+1. **Create a Book**: `POST /crud/`
 
     - Request Body: JSON object containing book details.
     - Example:
       ```json
       {
-        "title": "The Great Gatsby",
-        "author": "F. Scott Fitzgerald",
-        "published_date": "1925-04-10",
-        "isbn": "9780743273565",
-        "page_count": 180,
+        "title": "Where the Crawdads Sing",
+        "author": "Delia Owens",
+        "published_date": "1947-05-11",
+        "isbn": "78836527826374",
+        "page_count": 400,
         "cover": "http://example.com/gatsby.jpg",
         "language": "English"
       }
       ```
 
-2. **Get Book by ID**: `GET /books/{id}`
+2. **Get Book by ID**: `GET /crud/{id}`
 
     - Response: JSON object of the book's details or 404 if not found.
 
-3. **Get Books with Filters**: `GET /books/`
+3. **Get Books with Filters**: `GET /crud/`
 
     - Query Parameters: `author`, `published_date`, `language` (all optional).
     - Example: `/books?author=Fitzgerald&language=English`
@@ -73,7 +67,7 @@ The Book API allows users to manage a collection of books by providing functiona
       }
       ```
 
-5. **Delete a Book**: `DELETE /books/{id}`
+5. **Delete a Book**: `DELETE /crud/{id}`
 
     - Response: JSON object of the deleted book's details or 404 if not found.
 
